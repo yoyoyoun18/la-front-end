@@ -1,5 +1,6 @@
 import React from "react";
 import RadarChart from "../components/RadarChart";
+import { useNavigate } from "react-router-dom";
 
 function Results() {
   const data = [
@@ -9,6 +10,8 @@ function Results() {
     { name: "악마", value: 4.35, color: "bg-purple-400", icon: "😈" },
     { name: "보조", value: 4.16, color: "bg-pink-300", icon: "🛡️" },
   ];
+
+  const navigate = useNavigate();
 
   const maxValue = Math.max(...data.map((item) => item.value));
 
@@ -68,8 +71,17 @@ function Results() {
             로스트아크 공식 설문조사가 아닙니다.
           </p>
           <p className="mt-2">성향 테스트에 응해주셔서 감사합니다.</p>
-          <div className="w-full text-center">
-            <button className="m-4 text-yellow-400 border border-red-700 bg-red-900 hover:bg-red-800 w-40 h-12 mr-4">
+          <div className="w-full justify-center flex flex-col items-center">
+            <button
+              onClick={() => navigate("/statistics/alluser")}
+              className="m-2 text-yellow-400 border border-red-700 bg-red-900 hover:bg-red-800 w-40 h-12 "
+            >
+              직업 분포도 보기
+            </button>
+            <button
+              onClick={() => navigate("/")}
+              className="m-2 text-yellow-400 border border-red-700 bg-red-900 hover:bg-red-800 w-40 h-12 "
+            >
               다시하기
             </button>
           </div>

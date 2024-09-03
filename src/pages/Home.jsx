@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
   return (
     <div className="h-screen w-screen bg-black flex justify-center items-center flex-col">
       <div className="rounded-full overflow-hidden h-14 w-14 mb-8">
@@ -31,12 +33,18 @@ function Home() {
         <p>로스트아크 초보자입니까?</p>
         <div>
           {/* 첫 번째 버튼: "예" */}
-          <button className="m-2 text-yellow-400 border border-red-700 bg-red-900 hover:bg-red-800 w-40 h-12 mr-4">
+          <button
+            onClick={() => navigate("/test")}
+            className="m-2 text-yellow-400 border border-red-700 bg-red-900 hover:bg-red-800 w-40 h-12 mr-4"
+          >
             예
           </button>
 
           {/* 두 번째 버튼: "아니요" */}
-          <button className="m-2 text-yellow-400 border border-yellow-700 bg-black hover:bg-gray-800 w-40 h-12">
+          <button
+            onClick={() => navigate("/test")}
+            className="m-2 text-yellow-400 border border-yellow-700 bg-black hover:bg-gray-800 w-40 h-12"
+          >
             아니요
           </button>
         </div>
