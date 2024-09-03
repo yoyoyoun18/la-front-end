@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState, useEffect, CSSProperties } from "react";
+
+interface CustomCSSProperties extends CSSProperties {
+  "--target-width"?: string;
+}
 
 const CharacterRankingTable = () => {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+
   const data = [
     { name: "도깨비", percentage: 7.72, icon: "🎭" },
     { name: "기상술사", percentage: 6.48, icon: "🌪️" },
@@ -37,10 +47,17 @@ const CharacterRankingTable = () => {
             <span className="w-24 mr-2">{item.name}</span>
             <div className="flex-grow bg-gray-700 h-5 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-gray-500 to-gray-600"
-                style={{
-                  width: `${(item.percentage / data[0].percentage) * 100}%`,
-                }}
+                className={`h-full bg-gradient-to-r from-gray-500 to-gray-600 transition-all duration-1000 ease-out ${
+                  animate ? "animate-custom-width" : ""
+                }`}
+                style={
+                  {
+                    "--target-width": `${
+                      (item.percentage / data[0].percentage) * 100
+                    }%`,
+                    width: animate ? "var(--target-width)" : "0%",
+                  } as CustomCSSProperties
+                }
               ></div>
             </div>
             <span className="ml-2 w-12 text-right">
