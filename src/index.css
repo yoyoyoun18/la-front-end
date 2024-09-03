@@ -20,6 +20,19 @@
   }
 }
 
+@keyframes fillCustomWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+
+.animate-custom-width {
+  animation: fillCustomWidth 1s ease-out forwards;
+}
+
 .animate-custom-width {
   animation: fillCustomWidth 1s ease-out forwards;
 }

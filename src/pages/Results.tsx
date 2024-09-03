@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState, useEffect, CSSProperties } from "react";
 import RadarChart from "../components/RadarChart";
 import { useNavigate } from "react-router-dom";
 
+interface CustomCSSProperties extends CSSProperties {
+  "--target-width"?: string;
+}
+
 function Results() {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+
   const data = [
     { name: "무기", value: 5.76, color: "bg-amber-300", icon: "🔫" },
     { name: "냉기", value: 5.68, color: "bg-red-500", icon: "❄️" },
@@ -57,8 +67,17 @@ function Results() {
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-2.5">
                   <div
-                    className={`h-2.5 rounded-full ${item.color}`}
-                    style={{ width: `${(item.value / maxValue) * 100}%` }}
+                    className={`h-2.5 rounded-full ${
+                      item.color
+                    } transition-all duration-1000 ease-out ${
+                      animate ? "animate-custom-width" : ""
+                    }`}
+                    style={
+                      {
+                        "--target-width": `${(item.value / maxValue) * 100}%`,
+                        width: animate ? "var(--target-width)" : "0%",
+                      } as CustomCSSProperties
+                    }
                   ></div>
                 </div>
               </div>
