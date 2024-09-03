@@ -26,7 +26,7 @@ function Results() {
   const maxValue = Math.max(...data.map((item) => item.value));
 
   return (
-    <div className="h-auto w-screen bg-black flex justify-center items-center flex-col p-16">
+    <div className="h-auto w-full bg-black flex justify-center items-center flex-col p-16">
       <div className="w-[450px] bg-gray-900 p-4 border border-gray-400">
         <RadarChart />
         <div className="text-white border-t border-yellow-300 mt-4 pt-2 pb-2">
