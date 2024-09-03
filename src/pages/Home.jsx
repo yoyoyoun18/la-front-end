@@ -22,7 +22,7 @@ function Home() {
           <a href="https://namu.wiki/w/Big5">자세히</a>
         </div>
       </div>
-      <div className="w-[450px] h-auto bg-gray-900 border border-gray-400 mb-4 flex justify-center items-center flex-col p-4 text-[#F9DA9B]">
+      <div className="w-[450px] h-auto bg-gray-900 border border-gray-400 flex justify-center items-center flex-col p-4 text-[#F9DA9B]">
         <div className="h-36 mb-2">
           <img
             src="https://mnd-assets.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto:good,w_746/p3eriyzgleytjvpnbtaz"
