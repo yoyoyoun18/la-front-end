@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fillWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fillCustomWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+
+.animate-custom-width {
+  animation: fillCustomWidth 1s ease-out forwards;
+}
+
+.animate-width {
+  animation: fillWidth 1s ease-out forwards;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
