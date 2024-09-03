@@ -106,6 +106,9 @@ function Results() {
           </div>
         </div>
       </div>
+      <div className="w-96 h-11 bg-gray-400 flex justify-center items-center">
+        AD
+      </div>
     </div>
   );
 }
