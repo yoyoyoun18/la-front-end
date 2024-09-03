@@ -4,4 +4,6 @@
 
 ```
 npm install // node.js 20이상 권장
+
+npm start
 ```
