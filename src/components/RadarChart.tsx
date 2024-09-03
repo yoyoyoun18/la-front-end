@@ -44,8 +44,8 @@ const RadarChart = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-white p-4">
-      <h2 className="text-xl font-bold mb-4 text-start text-black">
+    <div className="w-full max-w-md mx-auto bg-none">
+      <h2 className="text-xl font-bold mb-4 text-start text-[#F9DA9B]">
         당신의 성향
       </h2>
       <Radar data={data} options={options} />
