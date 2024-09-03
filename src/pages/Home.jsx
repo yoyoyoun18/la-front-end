@@ -6,7 +6,7 @@ function Home() {
       <div className="rounded-full overflow-hidden h-14 w-14 mb-8">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHzT3JpeP-ow7qoHbyMIJis5e8besJMHaeYQ&s" />
       </div>
-      <div className="w-[450px] h-72 bg-[#373737] border border-gray-400 mb-4 flex justify-center items-center flex-col p-4 text-[#F9DA9B]">
+      <div className="w-[450px] h-72 bg-gray-900 border border-gray-400 mb-4 flex justify-center items-center flex-col p-4 text-[#F9DA9B]">
         <p className="text-[#956C3B] font-bold text-3xl mb-4">
           성향 테스트 + 직업 선택
         </p>
@@ -20,7 +20,7 @@ function Home() {
           <a href="https://namu.wiki/w/Big5">자세히</a>
         </div>
       </div>
-      <div className="w-[450px] h-auto bg-[#373737] border border-gray-400 mb-4 flex justify-center items-center flex-col p-4 text-[#F9DA9B]">
+      <div className="w-[450px] h-auto bg-gray-900 border border-gray-400 mb-4 flex justify-center items-center flex-col p-4 text-[#F9DA9B]">
         <div className="h-36 mb-2">
           <img
             src="https://mnd-assets.mynewsdesk.com/image/upload/c_fill,dpr_auto,f_auto,g_auto,q_auto:good,w_746/p3eriyzgleytjvpnbtaz"

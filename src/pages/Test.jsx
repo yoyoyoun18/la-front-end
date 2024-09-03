@@ -3,7 +3,7 @@ import React from "react";
 function Test() {
   return (
     <div className="h-screen w-screen bg-black flex justify-center items-center flex-col">
-      <div className="w-[450px] h-auto bg-[#373737] border border-gray-400 mb-4 flex justify-center items-start flex-col p-8 text-[#F9DA9B]">
+      <div className="w-[450px] h-auto bg-gray-900 border border-gray-400 mb-4 flex justify-center items-start flex-col p-8 text-[#F9DA9B]">
         <p className="text-2xl mb-4">성향 테스트</p>
         <div className="border border-gray-500 w-full h-auto rounded-md">
           <div className="h-14 border-b border-gray-500 bg-gray-500 text-white flex items-center p-4 font-bold">

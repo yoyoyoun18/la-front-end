@@ -28,7 +28,7 @@ const CharacterRankingTable = () => {
   ];
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-gray-900 text-white p-4 rounded-lg shadow-lg">
+    <div className="w-full max-w-2xl mx-auto bg-gray-900 text-white p-4 border border-gray-400">
       <h2 className="text-xl font-bold mb-4">직업 선호도</h2>
       <div className="space-y-2">
         {data.map((item, index) => (
