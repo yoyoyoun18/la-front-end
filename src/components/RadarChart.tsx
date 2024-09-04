@@ -48,7 +48,11 @@ const RadarChart = () => {
       <h2 className="text-xl font-bold mb-4 text-start text-[#F9DA9B]">
         당신의 성향
       </h2>
-      <Radar data={data} options={options} />
+      <Radar
+        data={data}
+        options={options}
+        className="bg-white border shadow-lg"
+      />
     </div>
   );
 };
