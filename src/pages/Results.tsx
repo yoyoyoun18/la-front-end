@@ -225,7 +225,7 @@ function Results() {
             </div>
             <button
               type="submit"
-              className="w-full bg-yellow-300 py-2 px-4 rounded-md text-gray-900 font-bold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="w-full bg-yellow-300 py-2 px-4 text-gray-900 font-bold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               ✏️ 작성
             </button>
