@@ -21,12 +21,86 @@ function Results() {
     { name: "보조", value: 4.16, color: "bg-pink-300", icon: "🛡️" },
   ];
 
+  const commentData = [
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+    {
+      name: "ㅇㅇ",
+      result: "홀리나이트",
+      createdAt: "2024-09-03 21:58:21",
+      content: "댓글 내용입니다.",
+    },
+  ];
+
   const navigate = useNavigate();
 
   const maxValue = Math.max(...data.map((item) => item.value));
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const commentsPerPage = 5;
+
+  // 페이지네이션을 위한 댓글 데이터 계산
+  const indexOfLastComment = currentPage * commentsPerPage;
+  const indexOfFirstComment = indexOfLastComment - commentsPerPage;
+  const currentComments = commentData.slice(
+    indexOfFirstComment,
+    indexOfLastComment
+  );
+
+  // 총 페이지 수 계산
+  const totalPages = Math.ceil(commentData.length / commentsPerPage);
+
+  // 페이지 변경 함수
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   return (
-    <div className="h-auto w-full bg-black flex justify-center items-center flex-col p-16">
+    <div className="h-auto w-full bg-black flex justify-center items-center flex-row p-16">
       <div className="w-[450px] bg-gray-900 p-4 border border-gray-400">
         <RadarChart />
         <div className="text-white border-t border-yellow-300 mt-4 pt-2 pb-2">
@@ -106,8 +180,96 @@ function Results() {
           </div>
         </div>
       </div>
-      <div className="w-96 h-11 bg-gray-400 flex justify-center items-center">
-        AD
+      <div className="w-[450px] h-[1247px] bg-gray-900 p-4 border border-gray-400">
+        <h2 className="text-xl font-bold mb-4 text-start text-[#F9DA9B]">
+          사용자 의견
+        </h2>
+        <div className=" border-t border-yellow-300 mt-4 pt-2 pb-2">
+          <form
+            // onSubmit={handleSubmit}
+            className="max-w-md mx-auto mt-4 bg-none"
+          >
+            <div className="mb-4">
+              <label
+                htmlFor="nickname"
+                className="block text-sm font-bold text-[#F9DA9B] mb-2"
+              >
+                닉네임
+              </label>
+              <input
+                type="text"
+                id="nickname"
+                name="nickname"
+                // value={formData.nickname}
+                // onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="comment"
+                className="block text-sm font-bold text-[#F9DA9B] mb-2"
+              >
+                한마디 남기기
+              </label>
+              <textarea
+                id="comment"
+                name="comment"
+                // value={formData.comment}
+                // onChange={handleChange}
+                rows={4}
+                className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-yellow-300 py-2 px-4 rounded-md text-gray-900 font-bold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              ✏️ 작성
+            </button>
+          </form>
+        </div>
+        <div className="border-t border-yellow-300 mt-4 pt-2 pb-2">
+          <div className="h-auto overflow-y-auto">
+            {currentComments.map((comment, index) => (
+              <div key={index} className="mb-4 bg-gray-800 p-3 rounded-lg">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-yellow-300 font-bold">
+                    {comment.name}
+                  </span>
+                  <span className="text-gray-400 text-sm">
+                    {comment.createdAt}
+                  </span>
+                </div>
+                <p className="text-white mb-2">{comment.content}</p>
+                <p className="text-gray-400 text-sm">결과: {comment.result}</p>
+              </div>
+            ))}
+          </div>
+          {/* 페이지네이션 UI */}
+          <div className="flex justify-center mt-4">
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => paginate(i + 1)}
+                className={`mx-1 px-3 py-1 rounded ${
+                  currentPage === i + 1
+                    ? "bg-yellow-300 text-gray-900"
+                    : "bg-gray-700 text-white hover:bg-gray-600"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="w-full h-[150px] flex justify-center items-center">
+          <div className="w-full h-24 bg-gray-400 flex justify-center items-center">
+            AD
+          </div>
+        </div>
       </div>
     </div>
   );
