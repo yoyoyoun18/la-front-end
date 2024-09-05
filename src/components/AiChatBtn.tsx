@@ -54,7 +54,7 @@ const AiChatBtn: React.FC<AiChatBtnProps> = ({
           <div className="bg-yellow-400 p-4 rounded-t-lg flex justify-between items-center">
             <h3 className="font-bold text-gray-800">채팅</h3>
             <button
-              onClick={onClick}
+              onClick={handleChatDiv}
               className="text-gray-800 hover:text-gray-600"
             >
               ✕
