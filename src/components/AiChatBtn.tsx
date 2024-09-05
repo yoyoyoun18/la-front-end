@@ -50,7 +50,7 @@ const AiChatBtn: React.FC<AiChatBtnProps> = ({
   return (
     <div>
       {isChatOpen && (
-        <div className="bg-white rounded-lg shadow-xl fixed bottom-24 right-10 w-[300px] h-[480px] flex flex-col">
+        <div className="bg-white rounded-lg shadow-xl fixed bottom-24 right-10 w-[300px] h-[480px] flex flex-col animate-scale-up-br">
           <div className="bg-yellow-400 p-4 rounded-t-lg flex justify-between items-center">
             <h3 className="font-bold text-gray-800">채팅</h3>
             <button
