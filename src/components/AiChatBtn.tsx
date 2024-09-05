@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 interface Message {
   text: string;
@@ -20,6 +20,13 @@ const AiChatBtn: React.FC<AiChatBtnProps> = ({
     { text: "안녕하세요! 무엇을 도와드릴까요?", sender: "ai" },
   ]);
   const [inputMessage, setInputMessage] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(scrollToBottom, [messages]);
 
   const handleSendMessage = () => {
     if (inputMessage.trim() !== "") {
@@ -66,6 +73,7 @@ const AiChatBtn: React.FC<AiChatBtnProps> = ({
               </div>
             </div>
           ))}
+          <div ref={messagesEndRef} /> {/* 스크롤을 위한 참조 요소 */}
         </div>
         <div className="p-4 border-t bg-white">
           <div className="flex">
