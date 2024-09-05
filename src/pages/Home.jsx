@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import AiChatBtn from "../components/AiChatBtn";
 
 function Home() {
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ function Home() {
       <div className="w-96 h-11 bg-gray-400 flex justify-center items-center">
         AD
       </div>
+      <AiChatBtn />
     </div>
   );
 }
